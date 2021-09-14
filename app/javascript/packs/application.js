@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
   menuBtn.addEventListener('click', () => {
       dropdown.classList.toggle('hidden');
       dropdown.classList.toggle('flex');
+      TriggerDropkick();
   });
 
   //dropdown in mobile menu
@@ -35,13 +36,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
   mobbtn.addEventListener('click', () => {
     mobmenu.classList.toggle('hidden');
     // mobmenu.classList.toggle('flex');
+    TriggerDropkick();
 });
 
   
  btn.addEventListener('click', () => {
       down.classList.toggle('hidden');
       down.classList.toggle('flex');
+      TriggerDropkick();
   });
-  
+ 
 
 })
