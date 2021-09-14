@@ -5,7 +5,7 @@
   <div class="bg-white  space-y-3 px-6 py-4 rounded-3xl shadow-lg border flex flex-col">
     
     <div class="flex justify-between items-center">
-      <h3 class="font-semibold text-xl"><%= course.name %></h3>
+      <h3 class="font-semibold text-xl"><%= course.short_name %>: <%= link_to course.name, course_path(course) %></h3>
     </div>
     
     <div class="text-gray-600 font-light truncate "><%= course.description %></div>
