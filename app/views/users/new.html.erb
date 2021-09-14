@@ -1,5 +1,8 @@
-<h1>New User</h1>
+<div class="grid justify-center mt-24">
+<div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+  <%= render 'form', user: @user %>
+</div> 
+</div>       
 
-<%= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
+
