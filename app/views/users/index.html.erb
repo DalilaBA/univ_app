@@ -1,31 +1,29 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password digest</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<div class="mx-5 flex-grow lg:mx-11 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-4 items-center justify-center py-10  ">
+<% @users.each do |user| %>
+<div class="w-full mx-auto max-w-xl rounded-lg bg-white dark:bg-gray-800 shadow-lg px-5 py-4 text-gray-800 dark:text-gray-50 mt-10">
+    <div class="w-full pt-1 text-center -mt-16 mx-auto">
+        <a href="#" class="block relative">
+          <%=image_tag "avatar.png", class:"mx-auto object-cover rounded-full h-20 w-20 " %>
+            
+        </a>
+    </div>
+    
+    <div class="w-full">
+        <div class="text-center mb-6">
+            <p class="text-gray-800 dark:text-white text-xl font-medium">
+               <%= user.name %>
+            </p>
+            <p class="text-gray-400 text-xs">
+               <%= user.email %>
+            </p>
+        </div>
+       
+        <button type="button" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+            View profile
+        </button>
+    </div>
+    
+</div>
+ <% end %>
+</div>
