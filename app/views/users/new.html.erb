@@ -1,8 +1,40 @@
-<div class="grid justify-center mt-24">
-<div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+<div class="flex-grow" >
+<% if @user.errors.any? %>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="bg-white p-8 rounded-xl ">
+  <div class="m-auto space-y-6">
+    <div class="flex gap-4 bg-red-100 p-4 rounded-md">
+        <div class="w-max">
+            <div class="h-10 w-10 flex rounded-full bg-gradient-to-b from-red-100 to-red-300 text-red-700">
+              <span class="material-icons material-icons-outlined m-auto" style="font-size:20px">gpp_bad</span>
+            </div>
+        </div>
+        <div class="space-y-1 text-sm">
+          <h6 class="font-medium text-red-900"><%= pluralize(@user.errors.count, "error")%> prohibited your profile from being created</h6>
+              <ul> 
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %> 
+              </ul>
+         
+        </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+ 
+
+<div class="  flex flex-col mt-20 px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 mx-8 md:mx-48 lg:px-10 lg:mx-96">
   <%= render 'form', user: @user %>
+
+
 </div> 
-</div>       
+     
 
 
 
