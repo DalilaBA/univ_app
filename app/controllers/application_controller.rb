@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :require_user
   helper_method :current_user, :logged_in? #make the variable accessible from the views also 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -9,14 +10,14 @@ class ApplicationController < ActionController::Base
     !!current_user #turning the variable to a boolean
   end
 
-  def reqire_user
+  def require_user
     if !logged_in?
       flash[:alert] = "You must be logged in to perform that action"
       redirect_to login_path
     end
   end
 
-  def require_own_user
+  def requuire_own_user
     if current_user !=@article.user && !current_user.admin?
       flash[:alert] = "You can only edit or delete your own article"
       redirect_to @article

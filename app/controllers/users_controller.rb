@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :require_user, only: [:new, :create]
   before_action :set_user, only: %i[ show edit update destroy ]
-
+  before_action : :require_same_student, only: [:edit, :update]
   # GET /users or /users.json
   def index
     @users = User.all
@@ -62,5 +63,11 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :email, :password_digest)
+    end
+
+    def require_same_student
+      if current_user != @user
+        flash[:notice] = "You can only edit your own profile"
+        redirect_to user_path(current_user)
     end
 end

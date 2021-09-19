@@ -116,8 +116,10 @@
         </button>
         
         <div class="gap-y-4 gap-x-8 text-sm ml-6 subMenu hidden">
+        <% if logged_in?%>
           <%= link_to 'Enroll', courses_new_path, class: "text-base font-medium text-gray-900 hover:text-gray-700" %>
            <%= link_to 'Student', root_path, class: "text-base font-medium text-gray-900 hover:text-gray-700" %>
+        <% end %>
            <%= link_to 'About', about_path, class: "text-base font-medium text-gray-900 hover:text-gray-700" %>
         </div>
         </a>
