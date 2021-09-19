@@ -11,6 +11,7 @@
       <%= form_for @user do |form| %>
             <div class="flex flex-col mb-2">
                 <div class=" relative ">
+                  <%= form.label :name, "Pseudo:" %>
                     <%= form.text_field :name, class: " rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",placeholder: "Name" %>
                     
                     </div>
@@ -18,18 +19,20 @@
                
                 <div class="flex flex-col mb-2">
                   <div class=" relative ">
+                  <%= form.label :email, "Email:" %>
                    <%= form.text_field :email, class: " rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder: "Email" %>
                   </div>
                 </div>
                 
                  <div class="flex flex-col mb-2">
                   <div class=" relative ">
+                  <%= form.label :password_digest, "Password:" %>
                   <%= form.text_field :password_digest, class: " rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder: "Password" %>
                   
                   </div>
                 </div>
                 <div class="flex w-full my-4">
-                  <%= form.submit "Sign Up" ,class: " mx-2 py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg " %>
+                  <%= form.submit "SUbmit changes" ,class: " mx-2 py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg " %>
                   <%= link_to 'Cansel', root_path, class: "mx-2 py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ", type: "button" %>
                  
                 </div>
