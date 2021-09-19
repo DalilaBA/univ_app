@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'user_courses/create'
   resources :users
   resources :courses
   root 'pages#home'
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   get 'login', to: "sessions#new"
   post 'login', to: "sessions#create"
   delete 'logout', to: "sessions#destroy"
+  post 'course_enroll', to: 'user_courses#create'
 end

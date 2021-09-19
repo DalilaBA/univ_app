@@ -10,7 +10,10 @@
     
     <div class="text-gray-600 font-light truncate "><%= course.description %></div>
     <ul class="flex space-x-2">
-      <li class="bg-blue-400 text-white text-md px-4 rounded-3xl">Enrolle</li>
+    <% if logged_in? && !(current_user.courses.include?(course)) %>
+      <%= link_to "Enroll", course_enroll_path(course_id: course.id), class: "bg-blue-400 text-white text-md px-4 rounded-3xl" , method: :post%>
+     
+    <% end %>
       <li class="bg-yellow-400 text-white text-md px-4 rounded-3xl">Info</li>
     </ul>
   </div>
